@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <title>Notes Application</title>
+</head>
+<body>
+    <div class="container">
+       <nav>
+        <div class="logo">Take notes!</div>
+  <input type="checkbox" id="click">
+  <label for="click" class="menu-btn">
+    <i class="fas fa-bars"></i>
+  </label>
+  <button id="darkModeToggle">🌙 Dark Mode</button>
+   <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search by title..." />
+  </div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>          
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  
+</nav>
+
+<section class="slider-container">
+    <div class="slider-images">
+        <h2 class="slider-title"> Show notes by Categories</h2>
+        <div class="slider-img category-Personal active" data-category="Personal">
+            <img src="https://www.adobe.com/uk/express/learn/blog/media_1dc3f69a53d3b214edbdc1cf5423e0796acc1114b.jpg?width=1200&format=pjpg&optimize=medium" alt="1">
+            <h1>Personal</h1>
+            <div class="details">
+                <p>Keep track of your personal notes, ideas, and reminders.</p>
+            </div>
+        </div>
+        <div class="slider-img category-Ideas" data-category="Ideas"> 
+            <img src="https://media.istockphoto.com/id/1897449937/vector/abstract-blurred-background-defocused-orange-yellow-gradient-stock-illustration-yellow.jpg?s=612x612&w=0&k=20&c=Jh7l3mJhipELYxH9XZ-aHimdokxA9ePpJp8gmKLgSG8=" alt="2">
+            <h1>Ideas</h1>
+            <div class="details">
+                <p>Keep track of ideas.</p>
+            </div>
+        </div>
+        <div class="slider-img category-Work" data-category="Work">
+            <img src="https://images.pexels.com/photos/3758105/pexels-photo-3758105.jpeg?cs=srgb&dl=pexels-olly-3758105.jpg&fm=jpg" alt="3">
+            <h1>Work</h1>
+            <div class="details">
+                <p>Keep track of your work</p>
+            </div>
+        </div>
+        <div class="slider-img category-Other" data-category="Other">
+            <img src="https://static.vecteezy.com/system/resources/previews/008/693/300/non_2x/pencil-cartoon-illustration-vector.jpg" alt="4">
+            <h1>others</h1>
+            <div class="details">
+                <p>Keep track of your personal notes, ideas, and reminders.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+       <div class="list-header">
+          <div class="addNoteDiv" onclick="popup()">
+            <i class="fa-solid fa-plus"></i>
+            
+           </div>
+           <div class="blankDiv"></div>
+           <div class="blankDiv"></div>
+       </div> 
+      <div class="list-container note-container">
+  <ul id="notes-list" class="notes-list"></ul>
+</div>
+
+    </div>
+    
+<div id="popupContainer" style="display: none;">
+    <h1>New Note</h1>
+     <input type="text" id="note-title" placeholder="Enter title..." />
+    <textarea id="note-text" placeholder="Enter your note..."></textarea>
+
+    <select id="note-category">
+        <option value="" disabled selected>Select category</option>
+        <option value="Personal">Personal</option>
+        <option value="Work">Work</option>
+        <option value="Ideas">Ideas</option>
+        <option value="Other">Other</option>
+    </select>
+
+    <div id="btn-container">
+        <button id="submit-btn" onclick="createNote()">Create Note</button>
+        <button id="close-btn" onclick="closePopup()">Close</button>
+    </div>
+</div>
+<!-- Edit Note Popup -->
+<div id="editPopupContainer" style="display:none;">
+  <h2>Edit Note</h2>
+  <input type="text" id="edit-note-title" placeholder="Edit title" />
+  <input type="text" id="edit-note-category" placeholder="Edit category" />
+  <textarea id="edit-note-text" placeholder="Edit note text..."></textarea>
+  <div>
+    <button id="edit-submit-btn">Save Changes</button>
+    <button onclick="closeEditPopup()">Cancel</button>
+  </div>
+</div>
+
+<div id="overlay" style="display:none;"></div>
+<template id="note-template">
+  <li class="note-item">
+    <h3 class="note-title"></h3>
+    <p class="note-category"><strong>Category:</strong> <span></span></p>
+    <p class="note-text"></p>
+    <div class="noteBtns-container">
+      <button class="editBtn">
+        <i class="fa-solid fa-pen"></i>
+      </button>
+      <button class="deleteBtn">
+        <i class="fa-solid fa-trash"></i>
+      </button>
+    </div>
+  </li>
+</template>
+
+
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        jQuery(document).ready(function($) {
+            $('.slider-img').on('click', function(){
+                $('.slider-img').removeClass('active');
+                $(this).addClass('active');
+            });
+        });
+    </script>
+  
+</body>
+</html>
