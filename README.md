@@ -7,6 +7,10 @@ Capture ideas instantly with our Notes app! Create, edit, and organize notes wit
 
 ---
 <img width="1899" height="866" alt="image" src="https://github.com/user-attachments/assets/5698e163-fa2d-4836-9151-1646f197dfd1" />
+<img width="1916" height="848" alt="image" src="https://github.com/user-attachments/assets/905c0fff-00bf-4b39-afcb-a61be32cf1c6" />
+<img width="1919" height="872" alt="image" src="https://github.com/user-attachments/assets/eb8e8f00-7cb3-4f56-b83b-5214bc5d0ae8" />
+
+
 
 
 ## 🏆 Features & Innovations  
