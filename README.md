@@ -6,6 +6,8 @@ Capture ideas instantly with our Notes app! Create, edit, and organize notes wit
 > Take notes, sort by categories, search instantly, and never lose a thought — all saved locally for you.
 
 ---
+<img width="1899" height="866" alt="image" src="https://github.com/user-attachments/assets/5698e163-fa2d-4836-9151-1646f197dfd1" />
+
 
 ## 🏆 Features & Innovations  
 
